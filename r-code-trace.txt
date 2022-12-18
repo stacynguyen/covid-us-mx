@@ -1,0 +1,98 @@
+library("ggplot2")
+ gapminder2 <- read.csv("C:/...", stringsAsFactors = TRUE)
+
+ ggplot(data = gapminder2, mapping = aes(x=date, y=new_deaths_smoothed_per_million, by=location, color=location)) + geom_line()
+ library("lubridate")
+
+ ggplot(data = gapminder2, mapping = aes(x=ymd(date), y=new__deaths_smoothed_per_million, by=location, color=location)) + geom_line()
+
+
+
+> ymd(gapminder2['new_deaths_smoothed_per_million'])
+[1] NA
+
+> dd <- ymd(gapminder2$date)
+
+> dh <- ymd(gapminder2$new_deaths_smoothed_per_million)
+
+> dh <- gapminder2$new_deaths_smoothed_per_million
+> dd[0]
+Date of length 0
+> dd[1]
+[1] "2020-01-01"
+
+> dd[1:867]
+
+> dhreal <- dh[1:867] * 2.2
+
+> length(dh)
+
+> dhreal_us <- dh[868:1713] * 1.32
+
+> ddreal <- dd[1:867]
+> ddreal <- ymd(ddreal)
+> ddreal
+> length(dd)
+[1] 1734
+> length(dhreal_mx)
+[1] 867
+> length(dhreal_us)
+[1] 846
+> dd
+> dd[1713]
+[1] "2022-05-16"
+> length(dhreal_us)
+[1] 846
+> length(dhreal_mx)
+[1] 867
+> ddreal <- dd[1:1713] 
+> length(ddreal)
+[1] 1713
+> dhreal <- c(dhreal_mx,dhreal_us)
+> length(dhreal)
+[1] 1713
+> new_fram <- data.frame(dates=ddreal,deaths=dhreal)
+> ggplot(data = new_frame, mapping = aes(x=ymd(dates), y=deaths, by=location, color=location)) + geom_line()
+Error in ggplot(data = new_frame, mapping = aes(x = ymd(dates), y = deaths,  : 
+  objeto 'new_frame' no encontrado
+> location_mx <- vector("list",867)
+> location_us <- vector("list",846)
+> length(location_mx)
+[1] 867
+> location_us 
+[[1]]
+NULL
+
+
+
+> l_us <- array(1:846, dim=846)
+> l_us[1:846] <- 'usa'
+> l_us
+
+> length(location_mx)
+[1] 867
+> l_mx <- array(1:867, dim=867)
+> l_mx[1:867] <- 'mexico'
+> l_mx
+> locs <- c(l_mx,l_us)
+> new_fram <- data.frame(dates=ddreal,deaths=dhreal,locations=locs)
+> ggplot(data = new_fram, mapping = aes(x=ymd(dates), y=deaths, by=locations, color=locations)) + geom_line()
+Warning message:
+Removed 126 row(s) containing missing values (geom_path). 
+> gapminder2 <- read.csv("C:/Users/arrio/OneDrive/Descargas/owid-covid-data US vs MX 17 may 2022.csv", stringsAsFactors = TRUE)
+Error in file(file, "rt") : no se puede abrir la conexión
+Además: Warning message:
+In file(file, "rt") :
+  no fue posible abrir el archivo 'C:/Users/arrio/OneDrive/Descargas/owid-covid-data US vs MX 17 may 2022.csv': No such file or directory
+> gapminder2 <- read.csv("C:/Users/arrio/Downloads/owid-covid-data US vs MX 17 may 2022.csv", stringsAsFactors = TRUE)
+> ggplot(data = gapminder2, mapping = aes(x=date, y=new_deaths_smoothed_per_million, by=location, color=location)) + geom_line()
+geom_path: Each group consists of only one observation. Do you need to adjust the group aesthetic?
+Warning message:
+Removed 129 row(s) containing missing values (geom_path). 
+> ggplot(data = gapminder2, mapping = aes(x=ymd(date), y=new_deaths_smoothed_per_million, by=location, color=location)) + geom_line()
+Warning message:
+Removed 126 row(s) containing missing values (geom_path). 
+> ggplot(data = new_fram, mapping = aes(x=ymd(dates), y=deaths, by=locations, color=locations)) + geom_line()
+Warning message:
+Removed 126 row(s) containing missing values (geom_path). 
+> 

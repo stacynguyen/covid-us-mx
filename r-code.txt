@@ -1,0 +1,4 @@
+library("ggplot2")
+library("lubridate")
+g2 <- read.csv("C:/java/CDMX vs NYC.csv", stringsAsFactors = TRUE)
+ggplot(data = g2, mapping = aes(x=ymd(date), y=probable_avg_7, by=location, color=location)) + geom_line()
