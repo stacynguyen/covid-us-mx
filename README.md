@@ -36,7 +36,8 @@ There is also some lines of code in R to plot the tables.
 The files involved in the calculus come from the Mexican registry and those from the state of New York.
 They are contained in [the zipped directory](./zip.rar)
 The only file not included is the COVID daily report from Mexico's Secretaría de Salud.
-The file of 22 may 2022 (`220507COVID19MEXICO`, 2.4 GB) or after should give the same results. 
+A file from around the day the calculations were run, 24 may 2022 (i.e. `220524COVID19MEXICO`, 2.4 GB) 
+should give the same results. 
 
 Also included: the csv files that are plotted in the report.
 
